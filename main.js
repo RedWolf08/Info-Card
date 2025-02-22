@@ -107,3 +107,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 });
+document.addEventListener('keydown', function(e) {
+    const activeButton = document.querySelector('.Button-Main.active');
+    let newActiveButton;
+
+    if (e.key === 'ArrowRight') {
+        newActiveButton = activeButton.nextElementSibling;
+    } else if (e.key === 'ArrowLeft') {
+        newActiveButton = activeButton.previousElementSibling;
+    }
+
+    if (newActiveButton && newActiveButton.classList.contains('Button-Main')) {
+        newActiveButton.click();
+    }
+});
